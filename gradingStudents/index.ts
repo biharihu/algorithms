@@ -1,12 +1,7 @@
 function gradingStudents(grades: number[]): number[] {
   let newGrades = [];
   grades.forEach(i => {
-    if (
-      i < 38 ||
-      Math.ceil(i / 5) * 5 - i == 3 ||
-      i === 0 ||
-      Math.ceil(i / 5) * 5 - i == 4
-    ) {
+    if (i < 38 || Math.ceil(i / 5) * 5 - i >= 3 || i === 0) {
       newGrades.push(i);
     } else if (Math.ceil(i / 5) * 5 - i < 3) {
       newGrades.push(Math.ceil(i / 5) * 5);
